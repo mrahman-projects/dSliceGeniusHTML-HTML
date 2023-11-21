@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      3D Slicer and Volume Estimate, For 3D Printing with 3D Slice Genius
+    </title>
+    <meta
+      name="description"
+      content="Take your 3D printing to new heights with 3D Slice Genius. Discover advanced slicing technology and optimize your workflow for unparalleled precision."
+    />
+    <meta
+      property="og:title"
+      content="3D Slicer and Volume Estimate, For 3D Printing with 3D Slice Genius"
+    />
+    <meta
+      property="og:description"
+      content="Take your 3D printing to new heights with 3D Slice Genius. Discover advanced slicing technology and optimize your workflow for unparalleled precision."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="shortcut icon"
+      href="public/wmdc logo small.jpg"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!-- Google Tag Manager -->
+
+    <!-- End Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PSZB53N6');
+    </script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <header data-thq="thq-navbar" class="home-navbar">
+          <span class="home-logo">SliceGenius</span>
+          <div
+            data-thq="thq-navbar-nav"
+            data-role="Nav"
+            class="home-desktop-menu"
+          >
+            <nav
+              data-thq="thq-navbar-nav-links"
+              data-role="Nav"
+              class="home-nav"
+            >
+              <button class="home-button button-clean button">About</button>
+              <a href="#feature" class="home-link button-clean button">
+                Features
+              </a>
+              <a href="#roadmap" class="home-link01 button-clean button">
+                Roadmap
+              </a>
+              <a href="#q&amp;a" class="home-link02 button-clean button">
+                Q&amp;A
+              </a>
+            </nav>
+          </div>
+          <div data-thq="thq-navbar-btn-group" class="home-btn-group">
+            <a
+              href="https://rapidapi.com/organization/watchmydc"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="home-view button"
+            >
+              View on RapidAPI
+            </a>
+          </div>
+          <div data-thq="thq-burger-menu" class="home-burger-menu">
+            <button class="button home-button1">
+              <svg viewBox="0 0 1024 1024" class="home-icon">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div data-thq="thq-mobile-menu" class="home-mobile-menu">
+            <div
+              data-thq="thq-mobile-menu-nav"
+              data-role="Nav"
+              class="home-nav1"
+            >
+              <div class="home-container1">
+                <span class="home-logo1">Character</span>
+                <div data-thq="thq-close-menu" class="home-menu-close">
+                  <svg viewBox="0 0 1024 1024" class="home-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                data-thq="thq-mobile-menu-nav-links"
+                data-role="Nav"
+                class="home-nav2"
+              >
+                <span class="home-text">About</span>
+                <span class="home-text01">Features</span>
+                <span class="home-text02">Pricing</span>
+                <span class="home-text03">Team</span>
+                <span class="home-text04">Blog</span>
+              </nav>
+              <div class="home-container2">
+                <button class="home-login button">Login</button>
+                <button class="button">Register</button>
+              </div>
+            </div>
+            <div class="home-icon-group">
+              <svg viewBox="0 0 950.8571428571428 1024" class="home-icon04">
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg viewBox="0 0 877.7142857142857 1024" class="home-icon06">
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg viewBox="0 0 602.2582857142856 1024" class="home-icon08">
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <section class="home-hero">
+          <div class="home-heading">
+            <h1 id="home" class="home-header">
+              <span class="home-text05">SliceGenius</span>
+              <br />
+              <span class="home-text07">Your Hub for 3D Printing APIs</span>
+            </h1>
+            <p class="home-caption">
+              Empowering Your 3D Printing Projects with Cutting-Edge APIs
+            </p>
+          </div>
+          <div class="home-buttons">
+            <a
+              href="https://rapidapi.com/organization/watchmydc"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="home-view1 button"
+            >
+              Explore Our APIs on RapidAPI
+            </a>
+          </div>
+        </section>
+        <section class="home-description">
+          <img
+            alt="image"
+            src="https://images.unsplash.com/photo-1615286922420-c6b348ffbd62?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDV8fDNEJTIwUHJpbnRlcnxlbnwwfHx8fDE2OTc2OTk4MTd8MA&amp;ixlib=rb-4.0.3&amp;w=1200"
+            class="home-divider-image"
+          />
+          <div class="home-container3">
+            <div class="home-description01">
+              <div class="home-content">
+                <p class="home-paragraph">
+                  Welcome to SliceGenius, the ultimate destination for 3D
+                  printing APIs. Explore a variety of powerful tools designed to
+                  enhance your 3D printing experience.
+                </p>
+              </div>
+              <div class="home-links">
+                <a
+                  href="https://linkedin.com/company/watchmydc"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="home-link03 button-link button"
+                >
+                  <span>Follow us on LinkedIn</span>
+                  <img
+                    alt="image"
+                    src="public/Icons/arrow.svg"
+                    class="home-arrow"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="home-cards">
+          <div class="home-row"></div>
+          <div id="feature" class="home-card">
+            <div class="home-avatar">
+              <img
+                alt="image"
+                src="public/Avatars/light-avatar.svg"
+                class="home-avatar1"
+              />
+            </div>
+            <div class="home-row1">
+              <div class="home-main">
+                <div class="home-content01">
+                  <h2 class="home-header01">Explore our 3D printing APIs</h2>
+                  <p class="home-description02">
+                    Including STL to G-Code conversion, volume calculation, and
+                    more. Transform your digital designs into tangible creations
+                    effortlessly.
+                  </p>
+                </div>
+                <button class="home-learn button">
+                  <span class="home-text09">Learn more</span>
+                  <img
+                    alt="image"
+                    src="public/Icons/arrow-2.svg"
+                    class="home-image"
+                  />
+                </button>
+              </div>
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1627637819794-fba32f82be16?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDEyfHwzRCUyMFByaW50aW5nfGVufDB8fHx8MTY5NzcwMDk0MXww&amp;ixlib=rb-4.0.3&amp;w=1100"
+                class="home-image1"
+              />
+            </div>
+          </div>
+        </section>
+        <section class="home-project">
+          <div class="home-understand">
+            <div class="home-content02">
+              <span class="home-caption1">API</span>
+              <div class="home-heading1">
+                <h2 class="home-header02">STL to G-Code Slicer</h2>
+                <p class="home-header03">
+                  Our cutting-edge STL slicer is the heart of your 3D printing
+                  process. With meticulous attention to detail, it transforms
+                  your 3D models in STL format into G-Code, ensuring each layer
+                  is crafted with precision. Customize your slicing parameters
+                  to suit your project's needs, and let our slicer do the rest.
+                  Experience seamless, high-quality 3D printing like never
+                  before with SliceGenius.
+                </p>
+              </div>
+              <button class="home-view2 button-link button">
+                <a
+                  href="https://rapidapi.com/watchmydc-watchmydc-default/api/stl-to-g-code-slicer/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="home-link04"
+                >
+                  Learn More
+                </a>
+                <img
+                  alt="image"
+                  src="public/Icons/arrow.svg"
+                  class="home-image2"
+                />
+              </button>
+            </div>
+            <img
+              alt="image"
+              src="https://images.unsplash.com/photo-1549563316-5384a923453e?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDR8fDNEJTIwUHJpbnRlcnxlbnwwfHx8fDE2OTc2OTk4MTd8MA&amp;ixlib=rb-4.0.3&amp;w=1500"
+              class="home-image3"
+            />
+          </div>
+        </section>
+        <section class="home-project1">
+          <div class="home-understand1">
+            <div class="home-content03">
+              <span class="home-caption2">API</span>
+              <div class="home-heading2">
+                <h2 class="home-header04">STL Volume Calculator</h2>
+                <p class="home-header05">
+                  Our volume calculation API offers a powerful tool to unlock
+                  the secrets of your 3D designs. It provides essential data,
+                  including the total air-gap volume, the overall volume,
+                  estimated print time and estimated weight based on your
+                  selected material. Supports PLA, ABS, ASA, PETG, PA6, PA12, PC
+                  and PPS. These insights are key to optimizing your 3D projects
+                  and ensuring they fit seamlessly into the real world.
+                </p>
+              </div>
+              <a
+                href="https://rapidapi.com/watchmydc-watchmydc-default/api/stl-info-insight"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-view3 button-link button"
+              >
+                <span class="home-text10">Learn More</span>
+                <img
+                  alt="image"
+                  src="public/Icons/arrow.svg"
+                  class="home-image4"
+                />
+              </a>
+            </div>
+            <img
+              alt="image"
+              src="https://images.unsplash.com/photo-1619840153283-50217ebb23e3?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDcxfHwzRCUyMFByaW50ZXJ8ZW58MHx8fHwxNjk3NzAyMzQ5fDA&amp;ixlib=rb-4.0.3&amp;w=1500"
+              class="home-image5"
+            />
+          </div>
+        </section>
+        <section class="home-roadmap">
+          <div class="home-heading3">
+            <h2 id="roadmap" class="home-header06">
+              <span class="home-text11">Our Roadmap</span>
+              <br class="home-text12" />
+              <span class="home-text13">Shaping the Future of 3D Printing</span>
+            </h2>
+            <p class="home-header07">
+              At SliceGenius, we're committed to constant innovation and
+              expanding our offerings. Our roadmap is packed with exciting
+              features on the horizon
+            </p>
+          </div>
+          <button class="home-button2 button">Keep an eye in RapidAPI</button>
+          <div class="home-list">
+            <div class="home-step">
+              <span class="home-caption3">01</span>
+              <div class="home-heading4">
+                <h2 class="home-header08">Pricing Calculator</h2>
+                <p class="home-header09">
+                  Simplify the cost estimation process for your 3D printing
+                  projects. Our pricing calculator will help you make informed
+                  decisions and stay within budget.
+                </p>
+              </div>
+            </div>
+            <div class="home-step1">
+              <span class="home-caption4">02</span>
+              <div class="home-heading5">
+                <h2 class="home-header10">Cloud Print</h2>
+                <p class="home-header11">
+                  <span>
+                    Experience the convenience of cloud-based 3D printing. Print
+                    from anywhere, anytime, and manage your projects with ease.
+                  </span>
+                  <br />
+                  <br />
+                </p>
+              </div>
+            </div>
+            <div class="home-step2">
+              <span class="home-caption5">03</span>
+              <div class="home-heading6">
+                <h2 class="home-header12">Load Balancer for All Printers</h2>
+                <p class="home-header13">
+                  <span>
+                    Streamline your 3D printing operations with our load
+                    balancer. It ensures optimal performance and resource
+                    allocation for all your printers.
+                  </span>
+                  <br />
+                  <br />
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="home-faq">
+          <h2 id="q&amp;a" class="home-header14">We have all the answers</h2>
+          <div class="home-accordion">
+            <div data-role="accordion-container" class="home-element accordion">
+              <div class="home-content04">
+                <span class="home-header15">
+                  What is an STL file, and why do I need an STL slicer?
+                </span>
+                <span data-role="accordion-content" class="home-description03">
+                  An STL file is a widely used 3D model format. To transform
+                  these models into physical objects with your 3D printer, you
+                  need an STL slicer. It converts the digital design into
+                  G-Code, the language your 3D printer understands, ensuring
+                  precise and accurate prints.
+                </span>
+              </div>
+              <div class="home-icon-container">
+                <svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-closed"
+                  class="home-icon10"
+                >
+                  <path
+                    d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path></svg
+                ><svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-open"
+                  class="home-icon12"
+                >
+                  <path
+                    d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="home-element1 accordion"
+            >
+              <div class="home-content05">
+                <span class="home-header16">
+                  How can I customize slicing parameters with your API?
+                </span>
+                <span data-role="accordion-content" class="home-description04">
+                  Customizing slicing parameters is easy with our API. When
+                  making a slicing request, you can specify parameters like
+                  layer thickness, print speed, and infill density. These
+                  settings allow you to fine-tune the output based on your
+                  specific 3D printing needs. Set the parameter from available
+                  800+ features.
+                </span>
+              </div>
+              <div class="home-icon-container1">
+                <svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-closed"
+                  class="home-icon14"
+                >
+                  <path
+                    d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path></svg
+                ><svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-open"
+                  class="home-icon16"
+                >
+                  <path
+                    d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="home-element2 accordion"
+            >
+              <div class="home-content06">
+                <span class="home-header17">
+                  How do I download the processed G-Code files?
+                </span>
+                <span data-role="accordion-content" class="home-description05">
+                  Downloading the processed G-Code files is a straightforward
+                  process. After your slicing request is complete, you'll
+                  receive a download link. Simply click on the provided link to
+                  access and save your G-Code file.
+                </span>
+              </div>
+              <div class="home-icon-container2">
+                <svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-closed"
+                  class="home-icon18"
+                >
+                  <path
+                    d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path></svg
+                ><svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-open"
+                  class="home-icon20"
+                >
+                  <path
+                    d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="home-element3 accordion"
+            >
+              <div class="home-content07">
+                <span class="home-header18">
+                  Where can I find the list of parameters to be included during
+                  slicing?
+                </span>
+                <span data-role="accordion-content" class="home-description06">
+                  <span>
+                    Our slicing engine is based on CuraEngine. You can find a
+                    comprehensive list of available slicing parameters on the
+                    Cura GitHub repository&nbsp;
+                  </span>
+                  <a
+                    href="https://github.com/Ultimaker/Cura/blob/main/resources/definitions/fdmprinter.def.json"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="home-link05"
+                  >
+                    here
+                  </a>
+                  <span>.</span>
+                </span>
+              </div>
+              <div class="home-icon-container3">
+                <svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-closed"
+                  class="home-icon22"
+                >
+                  <path
+                    d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path></svg
+                ><svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-open"
+                  class="home-icon24"
+                >
+                  <path
+                    d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="home-element4 accordion"
+            >
+              <div class="home-content08">
+                <span class="home-header19">
+                  What can the volume calculator API provide for my 3D designs?
+                </span>
+                <span data-role="accordion-content" class="home-description07">
+                  Our volume calculator API offers valuable insights for your 3D
+                  projects. It provides data on the total air-gap volume and
+                  overall volume, which is essential for optimizing your designs
+                  and ensuring they fit seamlessly into the real world.
+                </span>
+              </div>
+              <div class="home-icon-container4">
+                <svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-closed"
+                  class="home-icon26"
+                >
+                  <path
+                    d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path></svg
+                ><svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-open"
+                  class="home-icon28"
+                >
+                  <path
+                    d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="home-element5 accordion"
+            >
+              <div class="home-content09">
+                <span class="home-header20">
+                  How can I connect with SliceGenius on RapidAPI?
+                </span>
+                <span data-role="accordion-content" class="home-description08">
+                  Connecting with SliceGenius on RapidAPI is easy. Click the
+                  "Explore Our APIs on RapidAPI" button on our homepage, which
+                  will take you to our RapidAPI profile. From there, you can
+                  explore and integrate our APIs into your projects.
+                </span>
+              </div>
+              <div class="home-icon-container5">
+                <svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-closed"
+                  class="home-icon30"
+                >
+                  <path
+                    d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path></svg
+                ><svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-open"
+                  class="home-icon32"
+                >
+                  <path
+                    d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="home-element6 accordion"
+            >
+              <div class="home-content10">
+                <span class="home-header21">
+                  How does the pricing for your API work?
+                </span>
+                <span data-role="accordion-content" class="home-description09">
+                  Our pricing structure is designed to be flexible and
+                  accommodating. When you use our API, you get 10 free slicing
+                  operations per month for each user. If you exceed this limit,
+                  it's just $1 per slice operation for overages. For more
+                  detailed pricing information, you can visit our RapidAPI
+                  subscription page to explore the subscription tiers and
+                  options.
+                </span>
+              </div>
+              <div class="home-icon-container6">
+                <svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-closed"
+                  class="home-icon34"
+                >
+                  <path
+                    d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path></svg
+                ><svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-open"
+                  class="home-icon36"
+                >
+                  <path
+                    d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="home-element7 accordion"
+            >
+              <div class="home-content11">
+                <span class="home-header22">
+                  RapidAPI does not support attachments more than 50MB, what
+                  should I do?
+                </span>
+                <span data-role="accordion-content" class="home-description10">
+                  You can contact us at contact@3dslicegenius.com for any
+                  special requests.
+                </span>
+              </div>
+              <div class="home-icon-container7">
+                <svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-closed"
+                  class="home-icon38"
+                >
+                  <path
+                    d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path></svg
+                ><svg
+                  viewBox="0 0 1024 1024"
+                  data-role="accordion-icon-open"
+                  class="home-icon40"
+                >
+                  <path
+                    d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="home-get-yours">
+          <div class="home-column">
+            <div class="home-card1">
+              <div class="home-content12">
+                <h2 class="home-header23">Focus on Business</h2>
+                <p class="home-description11">
+                  Ready to experience the future of 3D printing? Whether you're
+                  a 3D printing enthusiast, a business looking to optimize your
+                  workflow, or an educator inspiring the next generation of
+                  makers, SliceGenius has the solutions you need. Explore our
+                  range of 3D printing APIs, take control of your designs, and
+                  unlock a world of possibilities. Get started today and join
+                  the SliceGenius community.
+                </p>
+              </div>
+              <a
+                href="https://rapidapi.com/organization/watchmydc"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link06 button"
+              >
+                Get Started Today
+              </a>
+            </div>
+          </div>
+        </section>
+        <footer class="home-footer">
+          <div class="home-main1">
+            <div class="home-branding">
+              <div class="home-heading7">
+                <h2 class="home-logo2">Company</h2>
+                <p class="home-caption6">
+                  <span class="home-text22">
+                    SliceGenius is a product of WatchMyDC Analytics OY
+                  </span>
+                  <br />
+                  <br />
+                  <span>Business ID: 3168527-6</span>
+                  <br />
+                  <br />
+                  <span>Kanjoninkatu 17, 33720, Tampere, Finland.</span>
+                </p>
+              </div>
+              <div class="home-socials"></div>
+            </div>
+            <div class="home-links1">
+              <div class="home-list1">
+                <h3 class="home-heading8">Site</h3>
+                <div class="home-items">
+                  <a href="#home" class="home-link07 button-clean button">
+                    About
+                  </a>
+                  <a href="#feature" class="home-link08 button-clean button">
+                    Features
+                  </a>
+                  <a href="#roadmap" class="home-link09 button-clean button">
+                    Roadmap
+                  </a>
+                  <a href="#q&amp;a" class="home-link10 button-clean button">
+                    Q&amp;A
+                  </a>
+                </div>
+              </div>
+              <div class="home-list2"></div>
+            </div>
+            <div class="home-socials1">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-twitter social button"
+              >
+                <img
+                  alt="image"
+                  src="public/Icons/twitter.svg"
+                  class="home-image6"
+                />
+              </a>
+              <a
+                href="https://discord.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-discord social button"
+              >
+                <img
+                  alt="image"
+                  src="public/Icons/discord.svg"
+                  class="home-image7"
+                />
+              </a>
+            </div>
+          </div>
+          <span class="home-copyright">
+            © 2023 WatchMyDC Analytics OY. All Rights Reserved.
+          </span>
+        </footer>
+        <div>
+          <div class="home-container5">
+            <script>
+              /*
+               Accordion - Code Embed
+               */
+               const accordionContainers = document.querySelectorAll('[data-role='accordion-container']'); // All accordion containers
+               const accordionContents = document.querySelectorAll('[data-role='accordion-content']'); // All accordion content
+               const accordionIconsClosed = document.querySelectorAll('[data-role='accordion-icon-closed']'); // All accordion closed icons
+               const accordionIconsOpen = document.querySelectorAll('[data-role='accordion-icon-open']'); // All accordion open icons
+
+               accordionContents.forEach((accordionContent) => {
+                   accordionContent.style.display = 'none'; //Hides all accordion contents
+               });
+
+               accordionIconsClosed.forEach((icon) => {
+                 icon.style.display = 'flex'
+               })
+
+               accordionIconsOpen.forEach((icon) => {
+                 icon.style.display = 'none'
+               })
+
+               accordionContainers.forEach((accordionContainer, index) => {
+                   accordionContainer.addEventListener('click', () => {
+                       if (accordionContents[index].style.display === 'flex') {
+                           // If the accordion is already open, close it
+                           accordionContents[index].style.display = 'none';
+                           accordionIconsClosed[index].style.display = 'flex';
+                           accordionIconsOpen[index].style.display = 'none'
+                       } else {
+                           // If the accordion is closed, open it
+                           accordionContents.forEach((accordionContent) => {
+                               accordionContent.style.display = 'none'; //Hides all accordion contents
+                           });
+
+                           accordionIconsClosed.forEach((accordionIcon) => {
+                               accordionIcon.style.display = 'flex'; // Resets all icon transforms to 0deg (default)
+                           });
+
+                           accordionIconsOpen.forEach((accordionIcon) => {
+                             accordionIcon.style.display = 'none';
+                           })
+
+                           accordionContents[index].style.display = 'flex'; // Shows accordion content
+                           accordionIconsClosed[index].style.display = 'none'; // Rotates accordion icon 180deg
+                           accordionIconsOpen[index].style.display = 'flex';
+                       }
+                   });
+               });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://www.googletagmanager.com/gtag/js?id=G-WL9ESHM2V0"
+      async=""
+    ></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-WL9ESHM2V0');
+    </script>
+    <script type="text/javascript">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-PSZB53N6');
+    </script>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>
