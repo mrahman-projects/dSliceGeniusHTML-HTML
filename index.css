@@ -1229,7 +1229,11 @@
     font-size: 56px;
   }
   .home-divider-image {
+    width: 75%;
     padding-top: var(--dl-space-space-oneandhalfunits);
+  }
+  .home-paragraph {
+    align-self: flex-start;
   }
   .home-header01 {
     color: rgb(0, 0, 0);
