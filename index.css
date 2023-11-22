@@ -1754,6 +1754,10 @@
     font-style: normal;
     font-weight: 600;
   }
+  .home-link02 {
+    color: var(--dl-color-gray-black);
+    text-decoration: none;
+  }
   .home-header {
     color: rgb(255, 255, 255);
     width: 100%;
@@ -1790,6 +1794,9 @@
     color: rgb(255, 255, 255);
     font-size: 16px;
     line-height: 24px;
+  }
+  .home-image1 {
+    align-self: center;
   }
   .home-content03 {
     padding-top: var(--dl-space-space-unit);
