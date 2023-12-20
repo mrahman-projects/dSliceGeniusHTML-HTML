@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Doc-Vol-Calc - 3D Slicer and Volume Estimate, For 3D Printing with 3D
+      Slice Genius
+    </title>
+    <meta
+      name="description"
+      content="Take your 3D printing to new heights with 3D Slice Genius. Discover advanced slicing technology and optimize your workflow for unparalleled precision."
+    />
+    <meta
+      property="og:title"
+      content="Doc-Vol-Calc - 3D Slicer and Volume Estimate, For 3D Printing with 3D Slice Genius"
+    />
+    <meta
+      property="og:description"
+      content="Take your 3D printing to new heights with 3D Slice Genius. Discover advanced slicing technology and optimize your workflow for unparalleled precision."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="shortcut icon"
+      href="public/wmdc logo small.jpg"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <!-- Google Tag Manager -->
+
+    <!-- End Google Tag Manager -->
+    <style>
+      [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
+          display: flex;
+        }
+
+        [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
+          transform: rotate(90deg);
+        }
+    </style>
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PSZB53N6');
+    </script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./doc-vol-calc.css" rel="stylesheet" />
+
+      <div class="doc-vol-calc-container">
+        <header data-thq="thq-navbar" class="doc-vol-calc-navbar">
+          <span class="doc-vol-calc-logo">SliceGenius</span>
+          <div
+            data-thq="thq-navbar-nav"
+            data-role="Nav"
+            class="doc-vol-calc-desktop-menu"
+          >
+            <nav
+              data-thq="thq-navbar-nav-links"
+              data-role="Nav"
+              class="doc-vol-calc-nav"
+            >
+              <button class="doc-vol-calc-button button-clean button">
+                About
+              </button>
+              <div
+                data-thq="thq-dropdown"
+                class="doc-vol-calc-thq-dropdown list-item"
+              >
+                <div
+                  data-thq="thq-dropdown-toggle"
+                  class="doc-vol-calc-dropdown-toggle"
+                >
+                  <span class="doc-vol-calc-text">Documentations</span>
+                  <div
+                    data-thq="thq-dropdown-arrow"
+                    class="doc-vol-calc-dropdown-arrow"
+                  >
+                    <svg viewBox="0 0 1024 1024" class="doc-vol-calc-icon">
+                      <path d="M426 726v-428l214 214z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <ul
+                  data-thq="thq-dropdown-list"
+                  class="doc-vol-calc-dropdown-list"
+                >
+                  <li
+                    data-thq="thq-dropdown"
+                    class="doc-vol-calc-dropdown list-item"
+                  >
+                    <a href="doc-slicer.html">
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="doc-vol-calc-dropdown-toggle1"
+                      >
+                        <span class="doc-vol-calc-text001">
+                          STL to G-Code Slicer
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li
+                    data-thq="thq-dropdown"
+                    class="doc-vol-calc-dropdown1 list-item"
+                  >
+                    <a href="doc-vol-calc.html">
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="doc-vol-calc-dropdown-toggle2"
+                      >
+                        <span class="doc-vol-calc-text002">
+                          STL Volume Calculator
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <a href="#roadmap" class="doc-vol-calc-link button-clean button">
+                Roadmap
+              </a>
+              <button class="doc-vol-calc-button1 button-clean button">
+                Q&amp;A
+              </button>
+            </nav>
+          </div>
+          <div data-thq="thq-navbar-btn-group" class="doc-vol-calc-btn-group">
+            <a
+              href="https://rapidapi.com/organization/watchmydc"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="doc-vol-calc-view button"
+            >
+              View on RapidAPI
+            </a>
+          </div>
+          <div data-thq="thq-burger-menu" class="doc-vol-calc-burger-menu">
+            <button class="button doc-vol-calc-button2">
+              <svg viewBox="0 0 1024 1024" class="doc-vol-calc-icon02">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div data-thq="thq-mobile-menu" class="doc-vol-calc-mobile-menu">
+            <div
+              data-thq="thq-mobile-menu-nav"
+              data-role="Nav"
+              class="doc-vol-calc-nav1"
+            >
+              <div class="doc-vol-calc-container1">
+                <span class="doc-vol-calc-logo1">SliceGenius</span>
+                <div data-thq="thq-close-menu" class="doc-vol-calc-menu-close">
+                  <svg viewBox="0 0 1024 1024" class="doc-vol-calc-icon04">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                data-thq="thq-mobile-menu-nav-links"
+                data-role="Nav"
+                class="doc-vol-calc-nav2"
+              >
+                <a href="#home" class="doc-vol-calc-link01">About</a>
+                <a href="#home" class="doc-vol-calc-link02">Documentations</a>
+                <a href="doc-slicer.html" class="doc-vol-calc-navlink2">
+                  STL to G-Code Slicer
+                </a>
+                <a href="doc-vol-calc.html" class="doc-vol-calc-navlink3">
+                  STL Volume Calculator
+                </a>
+                <div
+                  data-thq="thq-dropdown"
+                  class="doc-vol-calc-thq-dropdown1 list-item"
+                >
+                  <ul
+                    data-thq="thq-dropdown-list"
+                    class="doc-vol-calc-dropdown-list1"
+                  >
+                    <li
+                      data-thq="thq-dropdown"
+                      class="doc-vol-calc-dropdown2 list-item"
+                    >
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="doc-vol-calc-dropdown-toggle3"
+                      >
+                        <span class="doc-vol-calc-text003">Sub-menu Item</span>
+                      </div>
+                    </li>
+                    <li
+                      data-thq="thq-dropdown"
+                      class="doc-vol-calc-dropdown3 list-item"
+                    >
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="doc-vol-calc-dropdown-toggle4"
+                      >
+                        <span class="doc-vol-calc-text004">Sub-menu Item</span>
+                      </div>
+                    </li>
+                    <li
+                      data-thq="thq-dropdown"
+                      class="doc-vol-calc-dropdown4 list-item"
+                    >
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="doc-vol-calc-dropdown-toggle5"
+                      >
+                        <span class="doc-vol-calc-text005">Sub-menu Item</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <a href="#roadmap" class="doc-vol-calc-link03">Roadmap</a>
+                <a href="#qa" class="doc-vol-calc-link04">Q&amp;A</a>
+              </nav>
+              <div class="doc-vol-calc-container2">
+                <a
+                  href="https://rapidapi.com/organization/watchmydc"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="doc-vol-calc-login button"
+                >
+                  View on RapidAPI
+                </a>
+              </div>
+            </div>
+            <div class="doc-vol-calc-icon-group">
+              <svg
+                viewBox="0 0 950.8571428571428 1024"
+                class="doc-vol-calc-icon06"
+              >
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="doc-vol-calc-icon08"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="doc-vol-calc-icon10"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <h1 class="doc-vol-calc-text006">
+          <span class="doc-vol-calc-text007">
+            STL Volume Calculator Documentation
+          </span>
+          <br />
+        </h1>
+        <span class="doc-vol-calc-text009">
+          <span class="doc-vol-calc-text010">STL Volume Calculator API</span>
+          <br class="doc-vol-calc-text011" />
+          <br />
+          <span class="doc-vol-calc-text013">Overview</span>
+          <br />
+          <br />
+          <span>
+            Welcome to the STL Volume Calculator API, a powerful tool for
+            extracting essential information from your 3D models. Whether you're
+            a 3D printing enthusiast, a professional, or an educator, this API
+            provides valuable insights to optimize your 3D printing projects.
+          </span>
+          <br />
+          <br />
+          <span class="doc-vol-calc-text019">Key Features</span>
+          <br class="doc-vol-calc-text020" />
+          <br class="doc-vol-calc-text021" />
+          <span>
+            The STL Volume Calculator API offers a range of features to enhance
+            your 3D printing experience:
+          </span>
+          <br />
+          <br />
+          <span>-</span>
+          <span class="doc-vol-calc-text026">
+            Total Volume, Air Volume, and Final Volume:
+          </span>
+          <span>
+            Easily obtain crucial volume measurements for your 3D models,
+            allowing you to fine-tune your designs and ensure they meet your
+            specifications.
+          </span>
+          <br />
+          <br />
+          <span>-</span>
+          <span class="doc-vol-calc-text031">Estimated Print Time:</span>
+          <span>
+            Get an accurate estimate of the time it will take to bring your
+            creations to life, helping you plan and manage your 3D printing
+            projects effectively.
+          </span>
+          <br />
+          <br />
+          <span>-</span>
+          <span class="doc-vol-calc-text036">
+            Estimated Weight Based on Material:
+          </span>
+          <span>
+            Our API supports a variety of materials, including PLA, ABS, ASA,
+            PETG, PA6, PA12, PC, and PPS. It provides estimated weight
+            calculations based on the selected material, taking into account the
+            density of each material type.
+          </span>
+          <br />
+          <br />
+          <span class="doc-vol-calc-text040">Supported Materials</span>
+          <br class="doc-vol-calc-text041" />
+          <br class="doc-vol-calc-text042" />
+          <span>
+            The following materials are supported by the API, each with its
+            estimated density in g/cm³:
+          </span>
+          <br />
+          <br />
+          <span>"PLA": 1.25</span>
+          <br />
+          <span>"ABS": 1.04</span>
+          <br />
+          <span>"ASA": 1.24</span>
+          <br />
+          <span>"PETG": 1.23</span>
+          <br />
+          <span>"PA6": 1.15</span>
+          <br />
+          <span>"PA12": 1.01</span>
+          <br />
+          <span>"PC": 1.20</span>
+          <br />
+          <span>"PPS": 1.80</span>
+          <br />
+          <span>
+            These material options enable you to make precise calculations for
+            your 3D printing projects based on the material you choose.
+          </span>
+          <br />
+          <br />
+          <span class="doc-vol-calc-text065">API Usage</span>
+          <br class="doc-vol-calc-text066" />
+          <br class="doc-vol-calc-text067" />
+          <span>
+            The STL Volume Calculator API is easy to integrate into your 3D
+            printing workflow. Follow the instructions below to access valuable
+            insights about your 3D models:
+          </span>
+          <br />
+          <br />
+          <span class="doc-vol-calc-text071">Making API Requests</span>
+          <br class="doc-vol-calc-text072" />
+          <br class="doc-vol-calc-text073" />
+          <span>
+            Use the following code (Python as example) as a reference for making
+            API requests:
+          </span>
+          <br />
+          <br />
+          <span class="doc-vol-calc-text077">import requests</span>
+          <br class="doc-vol-calc-text078" />
+          <br class="doc-vol-calc-text079" />
+          <span class="doc-vol-calc-text080">
+            url =
+            "https://stl-info-insight.p.rapidapi.com/3dslicer-02/calculate_volume"
+          </span>
+          <br class="doc-vol-calc-text081" />
+          <br class="doc-vol-calc-text082" />
+          <span class="doc-vol-calc-text083">
+            files = { "stl_file": "open('3dfile.stl', 'rb')" }
+          </span>
+          <br class="doc-vol-calc-text084" />
+          <span class="doc-vol-calc-text085">
+            payload = { "material_type": "ABS" }
+          </span>
+          <br class="doc-vol-calc-text086" />
+          <span class="doc-vol-calc-text087">headers = {</span>
+          <br class="doc-vol-calc-text088" />
+          <span class="doc-vol-calc-text089">
+            "X-RapidAPI-Key": "YOUR_RAPIDAPI_KEY",
+          </span>
+          <br class="doc-vol-calc-text090" />
+          <span class="doc-vol-calc-text091">
+            "X-RapidAPI-Host": "stl-info-insight.p.rapidapi.com"
+          </span>
+          <br class="doc-vol-calc-text092" />
+          <span class="doc-vol-calc-text093">}</span>
+          <br class="doc-vol-calc-text094" />
+          <br class="doc-vol-calc-text095" />
+          <span class="doc-vol-calc-text096">
+            response = requests.post(url, data=payload, files=files,
+            headers=headers)
+          </span>
+          <br />
+          <br />
+          <span class="doc-vol-calc-text099">print(response.json())</span>
+          <br class="doc-vol-calc-text100" />
+          <br class="doc-vol-calc-text101" />
+          <span class="doc-vol-calc-text102">API Usage</span>
+          <br class="doc-vol-calc-text103" />
+          <br class="doc-vol-calc-text104" />
+          <span>
+            To leverage the capabilities of the STL Volume Calculator API,
+            follow these steps to calculate essential information about your 3D
+            models.
+          </span>
+          <br />
+          <br />
+          <span class="doc-vol-calc-text108">Prerequisites</span>
+          <br />
+          <br />
+          <span>
+            You'll need a RapidAPI key, which can be obtained from RapidAPI.
+          </span>
+          <br />
+          <br />
+          <span class="doc-vol-calc-text114">Making a Request</span>
+          <br class="doc-vol-calc-text115" />
+          <br class="doc-vol-calc-text116" />
+          <span>
+            To make a request to the API, you can use the following code as an
+            example. This example demonstrates how to calculate volume, weight,
+            and print time for a specific STL file with the material type set to
+            "ABS."
+          </span>
+          <br />
+          <br />
+          <span class="doc-vol-calc-text120">
+            # Import the necessary libraries
+          </span>
+          <br class="doc-vol-calc-text121" />
+          <span class="doc-vol-calc-text122">import requests</span>
+          <br class="doc-vol-calc-text123" />
+          <br class="doc-vol-calc-text124" />
+          <span class="doc-vol-calc-text125">
+            url =
+            "https://stl-info-insight.p.rapidapi.com/3dslicer-02/calculate_volume"
+          </span>
+          <br class="doc-vol-calc-text126" />
+          <br class="doc-vol-calc-text127" />
+          <span class="doc-vol-calc-text128">
+            # Replace '3dfile.stl' with the path to your STL file
+          </span>
+          <br class="doc-vol-calc-text129" />
+          <span class="doc-vol-calc-text130">
+            files = { "stl_file": open('3dfile.stl', 'rb') }
+          </span>
+          <br class="doc-vol-calc-text131" />
+          <br class="doc-vol-calc-text132" />
+          <span class="doc-vol-calc-text133">
+            # Specify the material type (e.g., 'ABS')
+          </span>
+          <br class="doc-vol-calc-text134" />
+          <span class="doc-vol-calc-text135">
+            payload = { "material_type": "ABS" }
+          </span>
+          <br class="doc-vol-calc-text136" />
+          <br class="doc-vol-calc-text137" />
+          <span class="doc-vol-calc-text138">
+            # Set the required headers with your RapidAPI key and host
+          </span>
+          <br class="doc-vol-calc-text139" />
+          <span class="doc-vol-calc-text140">headers = {</span>
+          <br class="doc-vol-calc-text141" />
+          <span class="doc-vol-calc-text142">
+            "X-RapidAPI-Key": "YOUR_RAPIDAPI_KEY",
+          </span>
+          <br class="doc-vol-calc-text143" />
+          <span class="doc-vol-calc-text144">
+            "X-RapidAPI-Host": "stl-info-insight.p.rapidapi.com"
+          </span>
+          <br class="doc-vol-calc-text145" />
+          <span class="doc-vol-calc-text146">}</span>
+          <br class="doc-vol-calc-text147" />
+          <span class="doc-vol-calc-text148">Send the POST request</span>
+          <br class="doc-vol-calc-text149" />
+          <span class="doc-vol-calc-text150">
+            response = requests.post(url, data=payload, files=files,
+            headers=headers)
+          </span>
+          <br class="doc-vol-calc-text151" />
+          <br class="doc-vol-calc-text152" />
+          <span class="doc-vol-calc-text153">Print the JSON response</span>
+          <br class="doc-vol-calc-text154" />
+          <span class="doc-vol-calc-text155">print(response.json())</span>
+          <br />
+          <br />
+          <span class="doc-vol-calc-text158">Contact Us</span>
+          <br class="doc-vol-calc-text159" />
+          <br class="doc-vol-calc-text160" />
+          <span>
+            Your feedback is important to us. If you'd like to add more
+            materials to our supported list or suggest additional features,
+            please don't hesitate to contact us at contact@3dslicegenius.com.
+            We're here to support your 3D printing needs and continuously
+            improve our services.
+          </span>
+          <br />
+          <br />
+          <span>
+            Enjoy exploring the possibilities of the STL Volume Calculator API
+            and enhance your 3D printing experience!
+          </span>
+        </span>
+        <div class="doc-vol-calc-container3">
+          <a
+            href="https://rapidapi.com/watchmydc-watchmydc-default/api/stl-info-insight/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="doc-vol-calc-link05 button"
+          >
+            View This API in RapidAPI
+          </a>
+          <a
+            href="https://zylalabs.com/api-marketplace/tools/stl+info+insight+api/3015"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="doc-vol-calc-link06 button"
+          >
+            View This API in Zyla Labs
+          </a>
+        </div>
+        <div class="doc-vol-calc-container4">
+          <footer class="doc-vol-calc-footer">
+            <div class="doc-vol-calc-main">
+              <div class="doc-vol-calc-branding">
+                <div class="doc-vol-calc-heading">
+                  <h2 class="doc-vol-calc-logo2">Company</h2>
+                  <p class="doc-vol-calc-caption">
+                    <span class="doc-vol-calc-text165">
+                      SliceGenius is a product of WatchMyDC Analytics OY
+                    </span>
+                    <br />
+                    <br />
+                    <span>Business ID: 3168527-6</span>
+                    <br />
+                    <br />
+                    <span>Kanjoninkatu 17, 33720, Tampere, Finland.</span>
+                  </p>
+                </div>
+                <div class="doc-vol-calc-socials"></div>
+              </div>
+              <div class="doc-vol-calc-links">
+                <div class="doc-vol-calc-list">
+                  <h3 class="doc-vol-calc-heading1">Site</h3>
+                  <div class="doc-vol-calc-items">
+                    <a
+                      href="#home"
+                      class="doc-vol-calc-link07 button-clean button"
+                    >
+                      About
+                    </a>
+                    <a
+                      href="#feature"
+                      class="doc-vol-calc-link08 button-clean button"
+                    >
+                      Documentations
+                    </a>
+                    <a
+                      href="doc-slicer.html"
+                      class="doc-vol-calc-link09 button-clean button"
+                    >
+                      STL to G-Code Slicer
+                    </a>
+                    <a
+                      href="doc-vol-calc.html"
+                      class="doc-vol-calc-link10 button-clean button"
+                    >
+                      STL Volume Calculator
+                    </a>
+                    <a
+                      href="#roadmap"
+                      class="doc-vol-calc-link11 button-clean button"
+                    >
+                      Roadmap
+                    </a>
+                    <a
+                      href="#qa"
+                      class="doc-vol-calc-link12 button-clean button"
+                    >
+                      Q&amp;A
+                    </a>
+                  </div>
+                </div>
+                <div class="doc-vol-calc-list1"></div>
+              </div>
+              <div class="doc-vol-calc-socials1">
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="doc-vol-calc-twitter social button"
+                >
+                  <img
+                    alt="image"
+                    src="public/Icons/twitter.svg"
+                    class="doc-vol-calc-image"
+                  />
+                </a>
+                <a
+                  href="https://discord.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="doc-vol-calc-discord social button"
+                >
+                  <img
+                    alt="image"
+                    src="public/Icons/discord.svg"
+                    class="doc-vol-calc-image1"
+                  />
+                </a>
+              </div>
+            </div>
+            <a
+              href="https://www.watchmydc.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="doc-vol-calc-copyright"
+            >
+              © 2023 WatchMyDC Analytics OY. All Rights Reserved.
+            </a>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://www.googletagmanager.com/gtag/js?id=G-WL9ESHM2V0"
+      async=""
+    ></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-WL9ESHM2V0');
+    </script>
+    <script type="text/javascript">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-PSZB53N6');
+    </script>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>
