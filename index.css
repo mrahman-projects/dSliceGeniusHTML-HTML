@@ -58,7 +58,8 @@
   padding-bottom: var(--dl-space-space-halfunit);
 }
 .home-text {
-  font-size: 14px;
+  color: var(--dl-color-gray-white);
+  font-size: 18px;
   font-style: normal;
   text-align: center;
   font-weight: 500;
@@ -1277,10 +1278,12 @@
 }
 .home-link18 {
   color: rgb(255, 255, 255);
+  padding-left: 24px;
   text-decoration: none;
 }
 .home-link19 {
   color: rgb(255, 255, 255);
+  padding-left: 24px;
   text-decoration: none;
 }
 .home-link20 {
@@ -1332,7 +1335,6 @@
     gap: var(--dl-space-space-unit);
   }
   .home-text {
-    color: var(--dl-color-gray-white);
     font-size: 18px;
     font-style: normal;
     text-align: center;
@@ -1467,11 +1469,9 @@
   }
   .home-link18 {
     color: rgb(255, 255, 255);
-    padding-left: var(--dl-space-space-oneandhalfunits);
   }
   .home-link19 {
     color: rgb(255, 255, 255);
-    padding-left: var(--dl-space-space-oneandhalfunits);
     text-decoration: none;
   }
 }
