@@ -5,6 +5,7 @@
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
+  background-color: #27272D;
 }
 .doc-vol-calc-navbar {
   width: 100%;
@@ -57,7 +58,8 @@
   padding-bottom: var(--dl-space-space-halfunit);
 }
 .doc-vol-calc-text {
-  font-size: 14px;
+  color: #FFFFFF;
+  font-size: 18px;
   font-style: normal;
   text-align: center;
   font-weight: 500;
@@ -399,6 +401,12 @@
   width: var(--dl-size-size-xsmall);
   height: var(--dl-size-size-xsmall);
 }
+.doc-vol-calc-text006 {
+  color: #FFFFFF;
+}
+.doc-vol-calc-text009 {
+  color: #FFFFFF;
+}
 .doc-vol-calc-container3 {
   flex: 0 0 auto;
   width: 100%;
@@ -504,10 +512,12 @@
 }
 .doc-vol-calc-link09 {
   color: rgb(255, 255, 255);
+  padding-left: 24px;
   text-decoration: none;
 }
 .doc-vol-calc-link10 {
   color: rgb(255, 255, 255);
+  padding-left: 24px;
   text-decoration: none;
 }
 .doc-vol-calc-link11 {
@@ -559,8 +569,6 @@
     gap: var(--dl-space-space-unit);
   }
   .doc-vol-calc-text {
-    color: var(--dl-color-gray-white);
-    font-size: 18px;
     font-style: normal;
     text-align: center;
     font-weight: 500;
@@ -595,16 +603,18 @@
     font-weight: 500;
   }
   .doc-vol-calc-text006 {
-    color: var(--dl-color-gray-white);
     text-align: center;
   }
   .doc-vol-calc-text007 {
+    color: inherit;
     font-size: 72px;
   }
+  .doc-vol-calc-text008 {
+    color: #ffffff;
+  }
   .doc-vol-calc-text009 {
-    color: var(--dl-color-gray-white);
     font-size: 24px;
-    margin-top: var(--dl-space-space-sixunits);
+    margin-top: 96px;
   }
   .doc-vol-calc-text010 {
     font-size: 40px;
@@ -902,12 +912,6 @@
     left: -262px;
     position: absolute;
   }
-  .doc-vol-calc-link09 {
-    padding-left: var(--dl-space-space-oneandhalfunits);
-  }
-  .doc-vol-calc-link10 {
-    padding-left: var(--dl-space-space-oneandhalfunits);
-  }
 }
 @media(max-width: 991px) {
   .doc-vol-calc-desktop-menu {
@@ -1032,7 +1036,6 @@
     text-decoration: none;
   }
   .doc-vol-calc-text006 {
-    color: var(--dl-color-gray-white);
     padding-top: var(--dl-space-space-twounits);
   }
   .doc-vol-calc-text007 {
