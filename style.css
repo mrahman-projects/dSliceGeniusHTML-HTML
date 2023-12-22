@@ -56,6 +56,50 @@
 .button:hover {
   opacity: 0.5;
 }
+.button-postman {
+  color: var(--dl-color-gray-black);
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  box-shadow: 5px 6px 0px 0px #000000;
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 500;
+  padding-top: var(--dl-space-space-unit);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  padding-left: var(--dl-space-space-oneandhalfunits);
+  border-radius: 0px;
+  padding-right: var(--dl-space-space-oneandhalfunits);
+  padding-bottom: var(--dl-space-space-unit);
+  background-color: #EF5B25;
+}
+.button-postman:hover {
+  opacity: 0.5;
+}
+.button-zyla {
+  color: var(--dl-color-gray-black);
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  box-shadow: 5px 6px 0px 0px #000000;
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 500;
+  padding-top: var(--dl-space-space-unit);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  padding-left: var(--dl-space-space-oneandhalfunits);
+  border-radius: 0px;
+  padding-right: var(--dl-space-space-oneandhalfunits);
+  padding-bottom: var(--dl-space-space-unit);
+  background-color: #8fa7df;
+}
+.button-zyla:hover {
+  opacity: 0.5;
+}
 .input {
   color: var(--dl-color-gray-black);
   cursor: auto;

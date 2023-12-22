@@ -1183,6 +1183,9 @@
   max-width: 700px;
   line-height: 27px;
 }
+.home-view3 {
+  text-decoration: none;
+}
 .home-link16 {
   margin-top: var(--dl-space-space-oneandhalfunits);
   text-decoration: none;
@@ -1468,6 +1471,12 @@
   .home-card1 {
     position: relative;
   }
+  .home-view3 {
+    color: var(--dl-color-gray-white);
+    align-self: center;
+    text-decoration: none;
+    background-color: #EF5B25;
+  }
   .home-link16 {
     align-self: center;
     text-decoration: none;
@@ -1477,7 +1486,7 @@
     text-decoration: none;
     background-color: rgb(143, 167, 223);
   }
-  .home-text24 {
+  .home-text27 {
     align-self: center;
     margin-left: var(--dl-space-space-twounits);
   }
@@ -1956,7 +1965,7 @@
   .home-link17 {
     margin-top: 0px;
   }
-  .home-text24 {
+  .home-text27 {
     margin-top: 0px;
   }
   .home-footer {
@@ -1982,7 +1991,7 @@
     font-size: 12px;
     line-height: 18px;
   }
-  .home-text26 {
+  .home-text29 {
     width: 80%;
     font-size: 12px;
     line-height: 18px;
@@ -2186,7 +2195,7 @@
   .home-link16 {
     text-align: center;
   }
-  .home-text23 {
+  .home-text26 {
     text-align: center;
   }
 }
