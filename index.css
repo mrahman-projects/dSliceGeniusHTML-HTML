@@ -302,13 +302,13 @@
   font-weight: 500;
   line-height: 108px;
 }
-.home-text04 {
+.home-text07 {
   font-size: 48px;
 }
-.home-text05 {
+.home-text08 {
   font-size: 48px;
 }
-.home-text06 {
+.home-text09 {
   font-size: 48px;
 }
 .home-caption {
@@ -564,6 +564,9 @@
 .home-link09 {
   text-decoration: none;
 }
+.home-link10 {
+  text-decoration: none;
+}
 .home-image2 {
   width: 480px;
   object-fit: cover;
@@ -624,10 +627,13 @@
   font-size: 18px;
   line-height: 27px;
 }
-.home-link10 {
+.home-link11 {
   text-decoration: none;
 }
-.home-link11 {
+.home-link12 {
+  text-decoration: none;
+}
+.home-link13 {
   text-decoration: none;
 }
 .home-image3 {
@@ -665,14 +671,14 @@
   font-weight: 500;
   line-height: 108px;
 }
-.home-text09 {
+.home-text12 {
   font-size: 72px;
   font-style: normal;
 }
-.home-text10 {
+.home-text13 {
   font-size: 72px;
 }
-.home-text11 {
+.home-text14 {
   font-size: 48px;
 }
 .home-header07 {
@@ -681,7 +687,7 @@
   text-align: center;
   line-height: 36px;
 }
-.home-link12 {
+.home-link14 {
   margin-top: var(--dl-space-space-oneandhalfunits);
   text-decoration: none;
 }
@@ -960,7 +966,7 @@
   max-width: 800px;
   line-height: 27px;
 }
-.home-link13 {
+.home-link15 {
   text-decoration: underline;
 }
 .home-icon-container3 {
@@ -1177,11 +1183,11 @@
   max-width: 700px;
   line-height: 27px;
 }
-.home-link14 {
+.home-link16 {
   margin-top: var(--dl-space-space-oneandhalfunits);
   text-decoration: none;
 }
-.home-link15 {
+.home-link17 {
   margin-top: var(--dl-space-space-oneandhalfunits);
   text-decoration: none;
 }
@@ -1269,29 +1275,29 @@
   align-items: flex-start;
   flex-direction: column;
 }
-.home-link16 {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
-.home-link17 {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
 .home-link18 {
   color: rgb(255, 255, 255);
-  padding-left: 24px;
   text-decoration: none;
 }
 .home-link19 {
   color: rgb(255, 255, 255);
-  padding-left: 24px;
   text-decoration: none;
 }
 .home-link20 {
   color: rgb(255, 255, 255);
+  padding-left: 24px;
   text-decoration: none;
 }
 .home-link21 {
+  color: rgb(255, 255, 255);
+  padding-left: 24px;
+  text-decoration: none;
+}
+.home-link22 {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.home-link23 {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
@@ -1370,6 +1376,11 @@
     font-style: normal;
     font-weight: 500;
   }
+  .home-view {
+    color: var(--dl-color-gray-white);
+    text-decoration: none;
+    background-color: #EF5B25;
+  }
   .home-header {
     color: rgb(255, 255, 255);
     font-size: 90px;
@@ -1377,16 +1388,16 @@
     font-weight: 500;
     line-height: 108px;
   }
-  .home-text03 {
-    font-size: 56px;
-  }
-  .home-text04 {
-    font-size: 56px;
-  }
-  .home-text05 {
-    font-size: 56px;
-  }
   .home-text06 {
+    font-size: 56px;
+  }
+  .home-text07 {
+    font-size: 56px;
+  }
+  .home-text08 {
+    font-size: 56px;
+  }
+  .home-text09 {
     font-size: 56px;
   }
   .home-view2 {
@@ -1407,23 +1418,39 @@
     font-weight: 500;
   }
   .home-link08 {
+    color: var(--dl-color-gray-white);
+    height: auto;
+    align-self: center;
+    line-height: 1;
+    text-decoration: none;
+    background-color: #EF5B25;
+  }
+  .home-link09 {
     height: auto;
     align-self: center;
     line-height: 1;
     text-decoration: none;
   }
-  .home-link09 {
+  .home-link10 {
     align-self: center;
     text-decoration: none;
     background-color: #8fa7df;
   }
-  .home-link10 {
+  .home-link11 {
+    color: var(--dl-color-gray-white);
+    height: auto;
+    align-self: center;
+    line-height: 1;
+    text-decoration: none;
+    background-color: #EF5B25;
+  }
+  .home-link12 {
     height: auto;
     align-self: center;
     line-height: 1;
     text-decoration: none;
   }
-  .home-link11 {
+  .home-link13 {
     align-self: center;
     text-decoration: none;
     background-color: #8fa7df;
@@ -1441,16 +1468,16 @@
   .home-card1 {
     position: relative;
   }
-  .home-link14 {
+  .home-link16 {
     align-self: center;
     text-decoration: none;
   }
-  .home-link15 {
+  .home-link17 {
     align-self: center;
     text-decoration: none;
     background-color: rgb(143, 167, 223);
   }
-  .home-text21 {
+  .home-text24 {
     align-self: center;
     margin-left: var(--dl-space-space-twounits);
   }
@@ -1464,14 +1491,14 @@
     width: 281px;
     position: absolute;
   }
-  .home-link17 {
+  .home-link19 {
     color: rgb(255, 255, 255);
     text-decoration: none;
   }
-  .home-link18 {
+  .home-link20 {
     color: rgb(255, 255, 255);
   }
-  .home-link19 {
+  .home-link21 {
     color: rgb(255, 255, 255);
     text-decoration: none;
   }
@@ -1501,19 +1528,19 @@
     font-weight: 500;
     line-height: 108px;
   }
-  .home-text03 {
-    font-size: 56px;
-  }
-  .home-text04 {
-    font-size: 56px;
-  }
-  .home-text05 {
-    font-size: 56px;
-  }
   .home-text06 {
     font-size: 56px;
   }
   .home-text07 {
+    font-size: 56px;
+  }
+  .home-text08 {
+    font-size: 56px;
+  }
+  .home-text09 {
+    font-size: 56px;
+  }
+  .home-text10 {
     font-size: 56px;
   }
   .home-row {
@@ -1549,14 +1576,14 @@
     font-weight: 500;
     line-height: 108px;
   }
-  .home-text09 {
+  .home-text12 {
     font-size: 72px;
     font-style: normal;
   }
-  .home-text10 {
+  .home-text13 {
     font-size: 72px;
   }
-  .home-text11 {
+  .home-text14 {
     font-size: 48px;
   }
   .home-header08 {
@@ -1600,26 +1627,26 @@
     font-weight: 500;
     line-height: 108px;
   }
-  .home-text02 {
-    font-size: 56px;
-  }
-  .home-text03 {
-    font-size: 28px;
-    line-height: 90px;
-  }
-  .home-text04 {
-    font-size: 28px;
-    line-height: 90px;
-  }
   .home-text05 {
-    font-size: 28px;
-    line-height: 90px;
+    font-size: 56px;
   }
   .home-text06 {
     font-size: 28px;
     line-height: 90px;
   }
   .home-text07 {
+    font-size: 28px;
+    line-height: 90px;
+  }
+  .home-text08 {
+    font-size: 28px;
+    line-height: 90px;
+  }
+  .home-text09 {
+    font-size: 28px;
+    line-height: 90px;
+  }
+  .home-text10 {
     font-size: 28px;
     line-height: 90px;
   }
@@ -1733,14 +1760,14 @@
     color: rgb(255, 255, 255);
     line-height: 64px;
   }
-  .home-text09 {
+  .home-text12 {
     font-size: 36px;
     font-style: normal;
   }
-  .home-text10 {
+  .home-text13 {
     font-size: 36px;
   }
-  .home-text11 {
+  .home-text14 {
     font-size: 24px;
   }
   .home-header07 {
@@ -1748,7 +1775,7 @@
     font-size: 16px;
     line-height: 24px;
   }
-  .home-link12 {
+  .home-link14 {
     margin-top: 0px;
   }
   .home-list {
@@ -1923,13 +1950,13 @@
     text-align: center;
     line-height: 21px;
   }
-  .home-link14 {
+  .home-link16 {
     margin-top: 0px;
   }
-  .home-link15 {
+  .home-link17 {
     margin-top: 0px;
   }
-  .home-text21 {
+  .home-text24 {
     margin-top: 0px;
   }
   .home-footer {
@@ -1955,7 +1982,7 @@
     font-size: 12px;
     line-height: 18px;
   }
-  .home-text23 {
+  .home-text26 {
     width: 80%;
     font-size: 12px;
     line-height: 18px;
@@ -2006,20 +2033,8 @@
     font-weight: 500;
     line-height: 108px;
   }
-  .home-text02 {
-    font-size: 40px;
-    line-height: 48px;
-  }
-  .home-text03 {
-    font-size: 24px;
-    line-height: 48px;
-  }
-  .home-text04 {
-    font-size: 24px;
-    line-height: 48px;
-  }
   .home-text05 {
-    font-size: 24px;
+    font-size: 40px;
     line-height: 48px;
   }
   .home-text06 {
@@ -2027,6 +2042,18 @@
     line-height: 48px;
   }
   .home-text07 {
+    font-size: 24px;
+    line-height: 48px;
+  }
+  .home-text08 {
+    font-size: 24px;
+    line-height: 48px;
+  }
+  .home-text09 {
+    font-size: 24px;
+    line-height: 48px;
+  }
+  .home-text10 {
     font-size: 28px;
     line-height: 90px;
   }
@@ -2072,15 +2099,15 @@
     font-weight: 500;
     line-height: 64px;
   }
-  .home-text09 {
+  .home-text12 {
     font-size: 36px;
     font-style: normal;
   }
-  .home-text10 {
+  .home-text13 {
     font-size: 36px;
     font-style: normal;
   }
-  .home-text11 {
+  .home-text14 {
     font-size: 24px;
     font-weight: 300;
   }
@@ -2156,10 +2183,10 @@
   .home-description11 {
     max-width: 100%;
   }
-  .home-link14 {
+  .home-link16 {
     text-align: center;
   }
-  .home-text20 {
+  .home-text23 {
     text-align: center;
   }
 }
